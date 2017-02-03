@@ -37,9 +37,26 @@ namespace getcolor
             label3.Text = "G:" + g.ToString();
             label2.Text = "B:" + b.ToString();
             pictureBox1.BackColor = Color.FromArgb(r,g,b);
-            
-
-
+            string[] rgb_hex =
+            {
+                r.ToString("x").ToUpper(),
+                g.ToString("x").ToUpper(),
+                b.ToString("x").ToUpper()
+            };
+            int i = 0;
+            foreach (string str in rgb_hex)
+            {
+                if (str.Length!=2)
+                {
+                    rgb_hex[i] = "0" + rgb_hex[i];
+                }
+                i++;
+            }
+            label4.Text = "#";
+            foreach (string str in rgb_hex)
+            {
+                label4.Text = label4.Text + str;
+            }
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
@@ -94,8 +111,6 @@ namespace getcolor
             trackBar1.Value = r;
             trackBar2.Value = g;
             trackBar3.Value = b;
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,7 +130,7 @@ namespace getcolor
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("作者：LYao\r\n版本：v1.0","About");
+            MessageBox.Show("作者：LYao\r\n版本：v1.0.1","About");
         }
     }
 }
