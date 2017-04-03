@@ -13,6 +13,7 @@ namespace getcolor
     public partial class Form1 : Form
     {
 
+        bool showpic = false;
         public Form1()
         {
             InitializeComponent();
@@ -114,23 +115,37 @@ namespace getcolor
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            if (button1.Text == "冻结(&F)")
-            {
+        {           
                 timer1.Stop();
                 button1.Text = "恢复(&F)";
-            }
-            else
-            {
-                timer1.Start();
-                button1.Text = "冻结(&F)";
-            }
-
+                radioButton1.Checked = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("作者：LYao\r\n版本：v1.0.1","About");
+            colorDialog1.Color = pictureBox1.BackColor;
+            if (colorDialog1.ShowDialog()==DialogResult.OK)
+            {
+                trackBar1.Value = colorDialog1.Color.R;
+                trackBar2.Value = colorDialog1.Color.G;
+                trackBar3.Value = colorDialog1.Color.B;
+
+            }
+        }
+
+        private void label4_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            colorimg climg = new colorimg(trackBar1.Value,trackBar2.Value,trackBar3.Value,showpic);
+            climg.Show();
+        }
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            showpic = true;
         }
     }
 }

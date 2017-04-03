@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="colorimg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="colorimg.Designer.cs">
+      <DependentUpon>colorimg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="colorimg.resx">
+      <DependentUpon>colorimg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +97,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bitbug_favicon.ico" />
+    <None Include="Resources\_66CCFF.jpg" />
+    <None Include="Resources\39C5BB.png" />
+    <None Include="Resources\FFE212.png" />
+    <None Include="Resources\FFBFCB.png" />
+    <None Include="Resources\D80000.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
