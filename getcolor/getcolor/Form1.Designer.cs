@@ -42,11 +42,18 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.显示比色板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.联网查看详细信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置颜色值ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -88,6 +95,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "双击可以调出Windows自带的颜色设置器");
             this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_Click);
             // 
             // trackBar1
@@ -160,19 +168,62 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ContextMenuStrip = this.contextMenuStrip1;
             this.label4.Location = new System.Drawing.Point(347, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "#000000";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.toolTip1.SetToolTip(this.label4, "双击可编辑颜色代码，右键单击可使用其他功能。");
             this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.显示比色板ToolStripMenuItem,
+            this.联网查看详细信息ToolStripMenuItem,
+            this.设置颜色值ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 70);
+            // 
+            // 显示比色板ToolStripMenuItem
+            // 
+            this.显示比色板ToolStripMenuItem.Name = "显示比色板ToolStripMenuItem";
+            this.显示比色板ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.显示比色板ToolStripMenuItem.Text = "显示比色板";
+            this.显示比色板ToolStripMenuItem.Click += new System.EventHandler(this.显示比色板ToolStripMenuItem_Click);
+            // 
+            // 联网查看详细信息ToolStripMenuItem
+            // 
+            this.联网查看详细信息ToolStripMenuItem.Name = "联网查看详细信息ToolStripMenuItem";
+            this.联网查看详细信息ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.联网查看详细信息ToolStripMenuItem.Text = "联网查看详细信息";
+            this.联网查看详细信息ToolStripMenuItem.Click += new System.EventHandler(this.联网查看详细信息ToolStripMenuItem_Click);
+            // 
+            // 设置颜色值ToolStripMenuItem
+            // 
+            this.设置颜色值ToolStripMenuItem.Name = "设置颜色值ToolStripMenuItem";
+            this.设置颜色值ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.设置颜色值ToolStripMenuItem.Text = "设置颜色值";
+            this.设置颜色值ToolStripMenuItem.Click += new System.EventHandler(this.label4_DoubleClick);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(358, 119);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(47, 23);
+            this.textBox1.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.textBox1, "按回车键即可保存设置");
+            this.textBox1.Visible = false;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(422, 155);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton2);
@@ -197,6 +248,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,6 +268,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 显示比色板ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 联网查看详细信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 设置颜色值ToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
